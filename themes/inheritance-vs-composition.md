@@ -1,8 +1,9 @@
+Inheritance Versus Composition
+==============================
+
 ### Inheritance
 
-Inheritance is a core foundation upon which object oriented code is built upon. It generally describes a *is a kind of* relationship.
-
-Consider the following code:
+Inheritance is a core concept in object oriented code. It generally describes a *is a kind of* relationship.
 
 ```ruby
 class A
@@ -14,37 +15,63 @@ class B < A
   def yo; puts "yo"; end
 end
 
-A.new.hello => "hello"
-B.new.hello => "hello"
-B.new.goodbye => "goodbye"
-B.new.yo => "yo"
-A.new.yo => undefined method `yo'
+A.new.hello #=> "hello"
+B.new.hello #=> "hello"
+B.new.goodbye #=> "goodbye"
+B.new.yo #=> "yo"
+A.new.yo #=> undefined method `yo'
 ```
 
-Above we are declaring two class objects, `A` and `B`. We define `B` a bit differently, appending the first line of the class definition with `< A`. This is an inheritance declaration, allowing `B` to *inherit* all the behavior of `A` with no additional effort.
+Above we declare two `Class` objects, `A` and `B`. We define `B` as a **subclass** of a `A` with the inheritance notation `B < A`. This provides `B` with all of the behavior of `A`. In our case, `B` *inherits* both the *hello* and *goodbye* methods automatically.
 
-While inheritance shines in its ability to extend objects effortlessly, maintain code hierarchy, and keep code *DRY*, it falters, like anything, when used inappropriately. The **subclass** `B` becomes tightly coupled to its **superclass** `A`.
+While inheritance shines in its ability to extend objects effortlessly, maintain code hierarchy, and keep code *DRY*. However, there is no denying the tight coupling that exists between **subclass** `B` to its **superclass** `A`.
 
-Over time, it's likely that `A`'s behavior will evolve. This will affect **any and all** subclasses of `A` (since it can have more than just one), possibly breaking previous functionality. This is where inheritance starts to decay.
-
-Introducing Composition...
+Imagine `A`'s behavior evolving over time, and how it will effect its subclasses. This is a big consideration when dealing with inheritance. Often, superclasses support mulitple subclasses and complexity increases even further; a simple change in functionality could tricle down and break previous functionality. This is where inheritance starts to decay.
 
 ### Composition
 
-Composition is a slightly different strategy used in structuring code. Composition typically illustrates a *has a* relationship between objects.
+Composition provides an alternative to inheritance when structuring code. It typically illustrates a *has a* relationship between objects.
 
-Consider the code below:
+Composition aims at solving the pitfalls of inheritance through *encapsualtion*, *de-coupling*, and *delegation*. Instead of the tightly coupled objects sometimes created as a result inheritance, composition allows us to keep objects independent of each other, without fear of indirectly affecting dependent objects.
 
 ```ruby
-class Functions
-  def method; #something; end
-  def method2; #something; end
+class Mobility
+  def lumber; puts "lumbering"; end
+  def crabwalk; puts "crabwalking"; end
 end
 
-class
+class Bear
+  def initialize
+    @mobility = Mobility.new
+  end
+
+  def move
+    @mobility.lumber
+  end
+end
+
+class Crab
+  def initialize
+    @mobility = Mobility.new
+  end
+
+  def move
+    @mobility.crabwalk
+  end
+end
+
+Bear.new.move
+Crab.new.move
 ```
 
-Composition offers an alternative to the inheritance pattern. Composition aims at solving the pitfalls of inheritance with encapsualtion and de-coupling. Instead of the tightly coupled objects sometimes created as a result inheritance, composition allows us to keep objects independent of each other, without fear of indirectly affecting
+This example above, albeit quite contrived, examines some core components of composition. First, notice we have solid **encapsulation** in our `Class` objects by avoiding any direct inheritance. Second, it is `Mobility`'s responsiblity to provide a clean interface, as it's `Bear` and `Crab`'s duty to properly interact with it. The objects are fully **de-coupled** and instances of `Bear` and `Crab` **delegate** responsibility onto `Mobility`.
+
+## Inheritance vs. Composition
+
+The question of whether to use inheritance or composition typically depends on the situation. Both serve similar functions, but result in very different outcomes. It's often easiest to ask yourself, "is *y* a kind of *x*?". If the answer is yes, look to abstract the essense of *x* and create subclasses that inherit its behavior.
+
+Conversely, if the relationship is less hierarchical, reaching for composition is usually a good bet. Composition tends to provide more flexibility and extensibility, which is always a good thing when dealing with code attempting to model around a future which is largely unknown and in constant flux.
 
 
-## Inheritance Versus Composition
+
+
