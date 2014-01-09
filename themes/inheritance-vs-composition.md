@@ -60,8 +60,8 @@ class Crab
   end
 end
 
-Bear.new.move
-Crab.new.move
+Bear.new.move #=> lumbering
+Crab.new.move #=> crabwalking
 ```
 
 This example above, albeit quite contrived, examines some core components of composition. First, notice we have solid **encapsulation** in our `Class` objects by avoiding any direct inheritance. Second, it is `Mobility`'s responsiblity to provide a clean interface, as it's `Bear` and `Crab`'s duty to properly interact with it. The objects are fully **de-coupled** and instances of `Bear` and `Crab` **delegate** responsibility onto `Mobility`.
