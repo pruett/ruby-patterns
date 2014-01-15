@@ -12,3 +12,7 @@ a. [Inheritance vs. Composition](themes/inheritance-vs-composition.md)
 2. [pattern 2]()
 
 #### Disclaimer: This repo has no affiliations or relation with the book, its author, or any of its publishing channels
+
+### Patterns
+
+- [Template Method Pattern](/patterns/template.md)
