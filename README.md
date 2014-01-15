@@ -6,13 +6,12 @@ While reading about the concepts outlined in Russ Olsen's excellent *Design Patt
 
 ## Table of Contents
 
-a. [Inheritance vs. Composition](themes/inheritance-vs-composition.md)
+#### Concepts
 
-1. [pattern 1]()
-2. [pattern 2]()
+a. [Inheritance vs. Composition](inheritance-vs-composition.md)
 
-#### Disclaimer: This repo has no affiliations or relation with the book, its author, or any of its publishing channels
-
-### Patterns
+#### Patterns
 
 - [Template Method Pattern](/patterns/template.md)
+
+##### Disclaimer: This repo has no affiliations or relation with the book, its author, or any of its publishing channels
