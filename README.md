@@ -14,4 +14,4 @@ a. [Inheritance vs. Composition](inheritance-vs-composition.md)
 
 - [Template Method Pattern](/patterns/template.md)
 
-##### Disclaimer: This repo has no affiliations or relation with the book, its author, or any of its publishing channels
+##### Disclaimer: This repo represents no affiliation with the book, its author, or any of its publishing channels
