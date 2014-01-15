@@ -1,7 +1,9 @@
 Template Method Pattern
 =======================
 
-The *Template Method pattern* is a straightforward approach in which a base class defines a set of abstract methods that are expected to be defined by any number of subclasses.
+The *Template Method Pattern* is a straightforward approach where an abstract superclass defines a set of abstract methods that are meant to be overridden by its subclasses.
+
+Consider the example below:
 
 ```ruby
 class Template
@@ -29,7 +31,13 @@ class Template
 
   def finish; end
 end
+```
 
+Above we define a `Template` class that holds a few **abstract methods**, `first`, `second`, and `third`. Each of these abstract methods will `raise` an error, unless defined directly by a subclass. `Template` also defines two more methods, `start` and `finish`, which are optional methods (read: no explicit `raise`), referred to as **hook** methods. Hook methods provide a way to account for variability between implementations.
+
+Lastly, you'll notice that all of these methods are defined within a single *skeletal* method, a **template method** called `apply`, that executes every method in a particular order.
+
+```ruby
 class Shampoo < Template
   def start
     puts "rinse hair"
@@ -47,7 +55,11 @@ class Shampoo < Template
     puts "rinse shampoo from hair"
   end
 end
+```
 
+Above, we define a `Shampoo` class that inherits from our `Template` superclass. We override the required, abstract methods, as well as define a hook method, `start`.
+
+```ruby
 class Conditioner < Template
   def first
     puts "apply conditioner"
@@ -65,7 +77,11 @@ class Conditioner < Template
     puts "you hair is now silky and smooth"
   end
 end
+```
 
+Nearly identical implementation pattern as above, `Conditioner` defines its own required abstract methods along with its own hook method, in this case, `finish`
+
+```ruby
 Shampoo.new.apply
 #=>
 rinse hair
@@ -80,6 +96,5 @@ condition hair
 rinse conditioner from hair
 you hair is now silky and smooth
 ```
-The *Template Method pattern* builds an abstract base class complete with its own **template method** -- the `apply` method in our case, which makes calls to various other, methods, referred to as *abstract methods*. They are meant to be overwritten, to provide specific implementation between subclasses. This is the heart of the *Template Method pattern*!
 
-Another thing to note here, is that while the abstract methods, namely the `first`, `second`, and `third` methods are all required (or else it'll `raise` errors), you'll see `Template#start` and `Template#finish` are left blank. These methods, referred to as **hook methods** are ones in which the abstract class supplies as an optional overwrite. *Hook methods* can add a bit of power to an otherwise strict *template method*.
+The power of the **Template Method Pattern** lies in its simple inheritance-based stucture. Once a subclass is defined properly, we simply call the template method, `apply`, and are afforded the convenience of a customized implementation per subclass.
