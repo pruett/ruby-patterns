@@ -13,3 +13,4 @@ a. [Inheritance vs. Composition](inheritance-vs-composition.md)
 #### Patterns
 
 - [Template Method Pattern](/patterns/template.md)
+- [Strategy Pattern](/patterns/strategy.md)
