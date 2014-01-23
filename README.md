@@ -8,7 +8,7 @@ While reading about the concepts outlined in Russ Olsen's excellent *Design Patt
 
 #### Concepts
 
-a. [Inheritance vs. Composition](inheritance-vs-composition.md)
+a. [Inheritance vs. Composition](/themes/inheritance-vs-composition.md)
 
 #### Patterns
 
