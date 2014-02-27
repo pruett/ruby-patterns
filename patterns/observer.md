@@ -1,7 +1,7 @@
 Observer Pattern
 ================
 
-There may be scenarios in which you have an object that triggers the actions of third-party objects. The *Observer Pattern* (also known as a *publish/subscribe*) is designed to effectively handle these types of circumstances in a manageable way.
+There may be scenarios in which you have an object that triggers the actions of third-party objects. The *Observer pattern* (sometimes referred to as *publish/subscribe*) is designed to effectively handle these types of circumstances in a manageable way.
 
 Let's consider the following example:
 
@@ -33,7 +33,7 @@ tom.turn_on_shower
 
 Simple right? All the desired objects are triggered when `Homeowner#turn_on_shower` is invoked...
 
-Well, not so fast. There is a much better way in keeping everything informed. The *Observer Pattern* is here to help.
+Well, not so fast...there is a much better way in keeping everything informed. The *Observer Pattern* is here to help.
 
 ### De-couple Observers from the Subject
 
@@ -140,8 +140,7 @@ class CoffeePot
     # all observers called by their update method
   end
 end
-
 ...
 ```
 
-The *Observer Pattern* is nice way to keep **observer(s)** and their **subject** from tangling up. It is important to keep in mind the interface between the two and the level of complexity that should exist.
+The *Observer pattern* is nice way to keep **observer(s)** and their **subject** from tangling up. It is important to keep in mind the interface between the two and the level of complexity that should exist.

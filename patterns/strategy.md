@@ -93,6 +93,6 @@ conditioner.apply #=> since this hair is short, \n we'll have to use \n Brand A
 
 By allowing our context to accept code blocks, we can quickly whip up new strategies at runtime without needing to define any additional class objects. Pretty sweet!
 
-As you can see the **Strategy pattern** is maintains a nice separation of concern between the context and strategy object(s). Since the context has no knowledge of how a strategy is implemented, the pattern imposes **nearly** no restrictions.
+As you can see the *Strategy pattern* is maintains a nice separation of concern between the context and strategy object(s). Since the context has no knowledge of how a strategy is implemented, the pattern imposes **nearly** no restrictions.
 
-When implementing the **Strategy pattern** it is important to keep in mind how interfaces play a role. In our example, it was the `apply` method that was critical in making the context and strategy object(s) communicate. This delegation tradeoff is often a small price to pay compared to a tighlty coupled inheritance-based implementation, however.
+When implementing the *Strategy pattern* it is important to keep in mind how interfaces play a role. In our example, it was the `apply` method that was critical in making the context and strategy object(s) communicate. This delegation tradeoff is often a small price to pay compared to a tightly coupled inheritance-based implementation, however.

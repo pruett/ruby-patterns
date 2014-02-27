@@ -26,7 +26,7 @@ Above we declare two class objects, `A` and `B`. We define `B` as a subclass of 
 
 While inheritance shines in its ability to extend objects effortlessly, maintain code hierarchy, and [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself) up code, there is no denying the tight coupling that exists between subclass `B` to its superclass `A`.
 
-Imagine `A`'s behavior evolving over time, and how it will effect its subclasses. This is a big consideration when dealing with inheritance. Often, superclasses support mulitple subclasses and complexity increases even further; a simple change in functionality could trickle down and break previous functionality. This is where inheritance starts to decay.
+Imagine `A`'s behavior evolving over time, and how it will effect its subclasses. This is a big consideration when dealing with inheritance. Often, superclasses support multiple subclasses and complexity increases even further; a simple change in functionality could trickle down and break previous functionality. This is where inheritance starts to decay.
 
 ### Composition
 
@@ -64,12 +64,12 @@ Bear.new.move #=> lumbering
 Crab.new.move #=> crabwalking
 ```
 
-This example above, albeit quite contrived, examines some core components of composition. First, notice we have solid **encapsulation** in our class objects by avoiding any direct inheritance. Second, it is `Mobility`'s responsiblity to provide a clean interface, as it's `Bear` and `Crab`'s duty to properly interact with it. The objects are fully **de-coupled** and instances of `Bear` and `Crab` **delegate** responsibility onto `Mobility`.
+This example above, albeit quite contrived, examines some core components of composition. First, notice we have solid **encapsulation** in our class objects by avoiding any direct inheritance. Second, it is `Mobility`'s responsibility to provide a clean interface, as it's `Bear` and `Crab`'s duty to properly interact with it. The objects are fully **de-coupled** and instances of `Bear` and `Crab` **delegate** responsibility onto `Mobility`.
 
 ## Inheritance vs. Composition
 
 The question of whether to use inheritance or composition typically depends on the situation. Both serve similar functions, but result in very different outcomes.
 
-If you have a simple object hierarchy that answers yes to the question: "is *y* a kind of *x*?", you will likely first abstract the essense of *x* and create subclasses that inherit its behavior. Inheritance shines in simple examples that follow a disciplined path -- non-complex object relationships that build nicely off a defined superclass.
+If you have a simple object hierarchy that answers yes to the question: "is *y* a kind of *x*?", you will likely first abstract the essence of *x* and create subclasses that inherit its behavior. Inheritance shines in simple examples that follow a disciplined path -- non-complex object relationships that build nicely off a defined superclass.
 
-If the relationship is less hierarchical, however, reaching for composition is usually a good bet. Composition tends to provide more flexibility and extensibility, which is always a good thing, especially when attempting to model your code around a future which is largely unknown and in constant flux.
+If the relationship is less hierarchical, however, reaching for composition is usually a good bet. Composition tends to provide more flexibility and extensibility, especially when attempting to model your code around a future which is largely unknown and in constant flux.
