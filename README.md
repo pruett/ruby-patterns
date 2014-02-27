@@ -14,3 +14,4 @@ a. [Inheritance vs. Composition](/themes/inheritance-vs-composition.md)
 
 - [Template Method Pattern](/patterns/template.md)
 - [Strategy Pattern](/patterns/strategy.md)
+- [Observer Pattern](/patterns/observer.md)
