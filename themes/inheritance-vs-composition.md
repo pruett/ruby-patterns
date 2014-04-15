@@ -1,9 +1,10 @@
-Inheritance Versus Composition
-==============================
+# Inheritance Versus Composition
 
-### Inheritance
+## Inheritance
 
-Inheritance is a core concept in object oriented code. It generally describes a *is a kind of* relationship.
+**Inheritance** generally describes an *is a kind of* relationship between objects. In other words, through **inheritance**, one object is based off of another. This hierarchical implementation acts as an effective mechanism for code reuse.
+
+### Code Example: Inheritance in Action
 
 ```ruby
 class A
@@ -22,15 +23,19 @@ B.new.yo #=> "yo"
 A.new.yo #=> undefined method `yo'
 ```
 
-Above we declare two class objects, `A` and `B`. We define `B` as a subclass of a `A` with the inheritance notation `B < A`. This provides `B` with all of the behavior of `A`. In our case, `B` *inherits* both the `hello` and `goodbye` methods automatically.
+### Code Breakdown
+
+We declare two class objects, `A` and `B`. We define `B` as a **subclass** of a `A` (with the inheritance notation `B < A`). This provides `B` with all of the behavior of `A`. In our case, `B` *inherits* both the `hello` and `goodbye` methods automatically.
+
+#### Pros and Cons
 
 While inheritance shines in its ability to extend objects effortlessly, maintain code hierarchy, and [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself) up code, there is no denying the tight coupling that exists between subclass `B` to its superclass `A`.
 
-Imagine `A`'s behavior evolving over time, and how it will effect its subclasses. This is a big consideration when dealing with inheritance. Often, superclasses support multiple subclasses and complexity increases even further; a simple change in functionality could trickle down and break previous functionality. This is where inheritance starts to decay.
+Imagine `A`'s behavior evolving over time, and how it will affect its subclasses. This is a big consideration when dealing with inheritance. Often, superclasses support multiple subclasses and complexity increases even further; a simple change in functionality could trickle down and break previous functionality. This is where inheritance starts to decay.
 
-### Composition
+## Composition
 
-Composition provides an alternative to inheritance. It typically illustrates a *has a* relationship between objects.
+**Composition** provides an alternative to inheritance. It typically illustrates a *has a* relationship between objects.
 
 Composition aims at solving the pitfalls of inheritance through *encapsualtion*, *de-coupling*, and *delegation*. Instead of the tightly coupled objects sometimes created as a result inheritance, composition allows us to keep objects independent of each other, without fear of indirectly affecting dependent objects.
 
