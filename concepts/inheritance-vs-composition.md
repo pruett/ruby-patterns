@@ -1,10 +1,9 @@
-# Inheritance Versus Composition
+Inheritance Versus Composition
+==============================
 
 ## Inheritance
 
 **Inheritance** generally describes an *is a kind of* relationship between objects. In other words, through **inheritance**, one object is based off of another. This hierarchical implementation acts as an effective mechanism for code reuse.
-
-### Code Example: Inheritance in Action
 
 ```ruby
 class A
@@ -12,7 +11,7 @@ class A
   def goodbye; puts "goodbye"; end
 end
 
-class B < A
+class B < A # B inherits from A
   def yo; puts "yo"; end
 end
 
@@ -23,15 +22,11 @@ B.new.yo #=> "yo"
 A.new.yo #=> undefined method `yo'
 ```
 
-### Code Breakdown
+We declare two class objects, `A` and `B`. We define `B` as a **subclass** of a `A`. This provides `B` with all of the behavior of `A`. In our case, `B` *inherits* both the `hello` and `goodbye` methods from its **superclass** `A` automatically.
 
-We declare two class objects, `A` and `B`. We define `B` as a **subclass** of a `A` (with the inheritance notation `B < A`). This provides `B` with all of the behavior of `A`. In our case, `B` *inherits* both the `hello` and `goodbye` methods automatically.
+While inheritance shines in its ability to extend objects effortlessly, maintain code hierarchy, and [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself) up code, there is no denying the tight coupling that exists between the `A` and `B` class objects.
 
-#### Pros and Cons
-
-While inheritance shines in its ability to extend objects effortlessly, maintain code hierarchy, and [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself) up code, there is no denying the tight coupling that exists between subclass `B` to its superclass `A`.
-
-Imagine `A`'s behavior evolving over time, and how it will affect its subclasses. This is a big consideration when dealing with inheritance. Often, superclasses support multiple subclasses and complexity increases even further; a simple change in functionality could trickle down and break previous functionality. This is where inheritance starts to decay.
+For instance, imagine `A`'s behavior evolving over time, and how it could affect any its **subclasses**. This is a something to constantly consider when dealing with inheritance. A simple change in a **superclass**'s functionality could trickle down and break functionality in a **subclass**. This is where inheritance starts to decay.
 
 ## Composition
 
@@ -69,7 +64,9 @@ Bear.new.move #=> lumbering
 Crab.new.move #=> crabwalking
 ```
 
-This example above, albeit quite contrived, examines some core components of composition. First, notice we have solid **encapsulation** in our class objects by avoiding any direct inheritance. Second, it is `Mobility`'s responsibility to provide a clean interface, as it's `Bear` and `Crab`'s duty to properly interact with it. The objects are fully **de-coupled** and instances of `Bear` and `Crab` **delegate** responsibility onto `Mobility`.
+Above, we define a `Mobility` class, with several methods, which we'll use to compose objects with. `Bear` and `Crab` both *inherit* the `Mobility` object by instantiating an instance of `Mobility` within their respective `intialize` methods. From here, they are able to use all of `Mobility`'s capabilities as they see fit...without the confines of traditional inheritance depicted above.
+
+Notice we have solid **encapsulation** in our class objects by avoiding any direct inheritance. It is `Mobility`'s responsibility to provide a clean interface, as it's `Bear` and `Crab`'s duties to properly interact with it. The objects are fully **de-coupled** and instances of `Bear` and `Crab` **delegate** responsibility onto `Mobility`.
 
 ## Inheritance vs. Composition
 
