@@ -1,14 +1,27 @@
-# Design Patterns in Ruby
+Design Patterns in Ruby
+=======================
 
-## What is this?
+## What is a design pattern?
 
-While reading about the concepts outlined in Russ Olsen's excellent [Design Patterns In Ruby](http://www.amazon.com/Design-Patterns-Ruby-Russ-Olsen/dp/0321490452), I felt compelled to take notes. Here they are. Feel free to contribute if you find any glaring mistakes, poor code examples, or anything else that needs fixing.
+Design patterns provide solutions to commonly occurring problems. "[Software design] Patterns are formalized best practices that the programmer can use to solve common problems when designing an application or system." [1][wiki-design-patterns]
 
-#### Patterns
+While the techniques, solutions, and best practices highlighted here are rooted in the Ruby language, the intention is to provide utility to any software developer writing in any language.
 
-a. [Inheritance vs. Composition](/themes/inheritance-vs-composition.md)
+[wiki-design-patterns]: http://en.wikipedia.org/wiki/Software_design_pattern  "Software design pattern"
 
-1. [Template Method Pattern](/patterns/template.md)
+## Inspiration
+
+This is 100% inspired by the concepts outlined in Russ Olsen's excellent [Design Patterns In Ruby](http://www.amazon.com/Design-Patterns-Ruby-Russ-Olsen/dp/0321490452) book.
+
+## Table of Contents
+
+### Concepts
+
+[Inheritance vs. Composition](/concepts/inheritance-vs-composition.md)
+
+### Patterns
+
+1. [Template Method Pattern](/patterns/template_method.md)
 2. [Strategy Pattern](/patterns/strategy.md)
 3. [Observer Pattern](/patterns/observer.md)
 4. Composite Pattern
@@ -21,3 +34,16 @@ a. [Inheritance vs. Composition](/themes/inheritance-vs-composition.md)
 11. Factory Pattern
 12. Builder Pattern
 13. Interpreter Pattern
+
+## Contributing
+
+Feel free to contribute if you find any glaring mistakes, poor code examples, or anything else that needs fixing.
+
+#### To submit pull request
++ Fork this repo
++ Commit changes on a feature branch
++ Submit pull request [your-feature-branch -> pruett/ruby-patterns/master]
+
+Or simply open up an issue.
+
+Thanks!
