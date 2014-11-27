@@ -1,7 +1,9 @@
 Strategy Pattern
 ================
 
-The *Strategy pattern* solves the same problem as the [Template Method pattern](patterns/template_method.md) with a slightly different approach. Instead of the inheritance-based technique used by the *Template Method pattern*, the *Strategy pattern* chooses one rooted in composition and delegation; thus, increasing overall flexibility and decreasing coupling.
+The *Strategy pattern* solves the same problem as the [Template Method pattern](patterns/template_method.md) with a slightly different approach.
+
+Instead of the inheritance-based technique used by the *Template Method pattern*, the *Strategy pattern* chooses one rooted in composition and delegation; thus, increasing overall flexibility and decreasing coupling.
 
 We'll continue where we left off with the [Template Method pattern](patterns/template.md) example, but instead of creating `Shampoo` and `Conditioner` as subclasses, we'll define them as **strategies** below:
 

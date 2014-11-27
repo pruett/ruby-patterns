@@ -1,11 +1,7 @@
 Template Method Pattern
 =======================
 
-The *Template Method Pattern* is an [inheritance](/concepts/inheritance-vs-composition.md#inheritance)-based approach, where a set of methods are defined within a superclass, with the intention of being overwritten by a subclass.
-
-## When to use it?
-
-Use the *Template Method Pattern* when defining a common, repeatable set of instructions that need variability between implementations.
+The *Template Method Pattern* is an [inheritance](/concepts/inheritance-vs-composition.md#inheritance)-based approach, where a **superclass** defines a set of instructions that are to be executed independently by a **subclass**. The subclass is responsible for tailoring the implementation details to its specific use case.
 
 ```ruby
 class Template
@@ -37,7 +33,7 @@ end
 
 Above we are defining a class object, `Template`, that holds a few **abstract methods**: `first`, `second`, and `third`. We are telling each of these abstract methods to `raise` an error by default (we want them to be defined/overwritten by a subclass).
 
-`Template` also defines two more methods, `start` and `finish`, which are optional methods (no explicit `raise`), referred to as **hook** methods. Hook methods provide a way to account for variability between implementations. Lastly, you'll notice that all of these methods are defined within a single *skeletal* method, a **template method** called `apply`, that executes every method in a particular order.
+`Template` also defines two more methods, `start` and `finish`, which are optional methods (no explicit `raise`), referred to as **hook** methods. Hook methods provide a way to account for variability between implementations. Lastly, you'll notice that all of these methods are defined within a single skeletal method, a **template method** called `apply`, that executes every method in a particular order.
 
 ```ruby
 class Shampoo < Template
