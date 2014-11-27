@@ -95,4 +95,4 @@ rinse conditioner from hair
 you hair is now silky and smooth
 ```
 
-The power of the *Template Method Pattern* lies in its simple inheritance-based structure. Once a subclass is defined properly, we simply call the template method, `apply`, and are afforded the convenience of a customized implementation per subclass.
+The power of the *Template Method Pattern* lies in its simple inheritance-based approach. Once a **subclass** is defined properly, we simply call the **template method**, `apply`, and are afforded the convenience of a customized implementation per **subclass**.
