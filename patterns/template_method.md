@@ -1,9 +1,11 @@
 Template Method Pattern
 =======================
 
-The *Template Method Pattern* is a straightforward approach where an abstract superclass defines a set of abstract methods that are meant to be overridden by its subclasses.
+The *Template Method Pattern* is an [inheritance](/concepts/inheritance-vs-composition.md#inheritance)-based approach, where a set of methods are defined within a superclass, with the intention of being overwritten by a subclass.
 
-Consider the example below:
+## When to use it?
+
+Use the *Template Method Pattern* when defining a common, repeatable set of instructions that need variability between implementations.
 
 ```ruby
 class Template
@@ -33,9 +35,9 @@ class Template
 end
 ```
 
-Above we define a `Template` class that holds a few **abstract methods**, `first`, `second`, and `third`. Each of these abstract methods will `raise` an error, unless defined directly by a subclass. `Template` also defines two more methods, `start` and `finish`, which are optional methods (read: no explicit `raise`), referred to as **hook** methods. Hook methods provide a way to account for variability between implementations.
+Above we are defining a class object, `Template`, that holds a few **abstract methods**: `first`, `second`, and `third`. We are telling each of these abstract methods to `raise` an error by default (we want them to be defined/overwritten by a subclass).
 
-Lastly, you'll notice that all of these methods are defined within a single *skeletal* method, a **template method** called `apply`, that executes every method in a particular order.
+`Template` also defines two more methods, `start` and `finish`, which are optional methods (no explicit `raise`), referred to as **hook** methods. Hook methods provide a way to account for variability between implementations. Lastly, you'll notice that all of these methods are defined within a single *skeletal* method, a **template method** called `apply`, that executes every method in a particular order.
 
 ```ruby
 class Shampoo < Template
@@ -97,4 +99,4 @@ rinse conditioner from hair
 you hair is now silky and smooth
 ```
 
-The power of the *Template Method Pattern* lies in its simple inheritance-based stucture. Once a subclass is defined properly, we simply call the template method, `apply`, and are afforded the convenience of a customized implementation per subclass.
+The power of the *Template Method Pattern* lies in its simple inheritance-based structure. Once a subclass is defined properly, we simply call the template method, `apply`, and are afforded the convenience of a customized implementation per subclass.

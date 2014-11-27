@@ -11,7 +11,7 @@ While the techniques, solutions, and best practices highlighted here are rooted 
 
 ## Inspiration
 
-This is 100% inspired by the concepts outlined in Russ Olsen's excellent [Design Patterns In Ruby](http://www.amazon.com/Design-Patterns-Ruby-Russ-Olsen/dp/0321490452) book.
+This is 100% inspired by the concepts outlined in Russ Olsen's excellent [Design Patterns In Ruby](http://www.amazon.com/Design-Patterns-Ruby-Russ-Olsen/dp/0321490452) book. I highly recommend picking it up.
 
 ## Table of Contents
 
