@@ -1,16 +1,18 @@
 Observer Pattern
 ================
 
-There may be scenarios in which you have an object that triggers the actions of third-party objects. The *Observer pattern* (sometimes referred to as *publish/subscribe*) is designed to effectively handle these types of circumstances in a manageable way.
+There may be scenarios in which you have an object that triggers the actions of third-party objects. The *Observer pattern* (commonly referred as *publish/subscribe* or *pubsub* for short) is designed to effectively handle these types of circumstances in a manageable way.
 
 Let's consider the following example:
 
-###### When Tom turns on the shower, he would like:
-- the coffee pot to brew coffee
-- the tv to tune to a particular show
-- his sonos sound system to play on some tunes
+**When Tom turns on the shower, he would like:**
++ the coffee pot to brew coffee
++ the tv to tune to a particular show
++ his sonos sound system to play on some tunes
 
-Semi-psuedo code for a situation like this **could** look like the following:
+## First Attempt
+
+Semi-psuedo code for a situation above **could** look like the following:
 
 ```ruby
 class HomeOwner
@@ -33,7 +35,9 @@ tom.turn_on_shower
 
 Simple right? All the desired objects are triggered when `Homeowner#turn_on_shower` is invoked...
 
-Well, not so fast...there is a much better way in keeping everything informed. The *Observer Pattern* is here to help.
+Well, not so fast...there is a much more flexible way in keeping modeling this behavior.
+
+## Utilizing the *Observer pattern*
 
 ### De-couple Observers from the Subject
 
@@ -143,4 +147,4 @@ end
 ...
 ```
 
-The *Observer pattern* is nice way to keep **observer(s)** and their **subject** from tangling up. It is important to keep in mind the interface between the two and the level of complexity that should exist.
+The *Observer pattern* is nice way to keep **observers** and their **subjects** from tangling up. It is important to keep in mind the interface between the two and the level of complexity that should exist.
