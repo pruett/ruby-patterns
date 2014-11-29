@@ -1,7 +1,7 @@
 Template Method Pattern
 =======================
 
-The *Template Method Pattern* is an [inheritance](/concepts/inheritance-vs-composition.md#inheritance)-based approach, where a **superclass** defines a set of instructions that are to be executed independently by a **subclass**. The subclass is responsible for tailoring the implementation details to its specific use case.
+The *Template Method pattern* is an [inheritance](/concepts/inheritance-vs-composition.md#inheritance)-based approach where a **superclass** defines a set of instructions that are to be customized and executed independently by its **subclasses**.
 
 ```ruby
 class Template
