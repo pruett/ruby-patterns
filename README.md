@@ -1,3 +1,5 @@
+# :boom: NO LONGER MAINTAINED :boom:
+
 Design Patterns in Ruby
 =======================
 
