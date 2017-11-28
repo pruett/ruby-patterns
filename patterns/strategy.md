@@ -1,9 +1,9 @@
 Strategy Pattern
 ================
 
-The *Strategy pattern* provides similar utility as the [Template Method pattern](patterns/template_method.md), but instead chooses a [composition](/concepts/inheritance-vs-composition.md#composition)-based approach.
+The *Strategy pattern* provides similar utility as the [Template Method pattern](/patterns/template_method.md), but instead chooses a [composition](/concepts/inheritance-vs-composition.md#composition)-based approach.
 
-We'll continue where we left off with the [Template Method pattern](patterns/template_method.md) example, but now, instead of creating `Shampoo` and `Conditioner` as subclasses, we'll define them as **strategies**.
+We'll continue where we left off with the [Template Method pattern](/patterns/template_method.md) example, but now, instead of creating `Shampoo` and `Conditioner` as subclasses, we'll define them as **strategies**.
 
 ```ruby
 class Shampoo
